@@ -4,25 +4,14 @@ namespace ConsoleApp
 {
     class Program
     {
-        private static double money = 0.0d;
+        //private static double money = 0.0d;
         static void Main(string[] args)
         {
-            Console.WriteLine("please enter the pay type: \n");
-            string type = Console.ReadLine();
-            Console.WriteLine("please enter the price: \n");
-            money = Double.Parse(Console.ReadLine()??"0");
-            // CashContext cashContext;
-            // cashContext = new CashContext(new CashNormal());
-            // cashContext.ContextInterface(money);
-            // cashContext = new CashContext(new CashRebate("0.8"));
-            // cashContext.ContextInterface(money);
-            // cashContext = new CashContext(new CashReturn("300","30"));
-            // cashContext.ContextInterface(money);
-            CashFactory factory = new CashFactory(type??"正常收费");
-            factory.ConTextInterface(money);
-            
-
-            Console.Read();
+           TestPaperA tpa = new TestPaperA();
+           tpa.TestQuestion1();
+           TestPaperB tpb = new TestPaperB();
+           tpb.TestQuestion1();
+            Console.ReadLine();
         }
 
         #region 策略模式 Strategy
