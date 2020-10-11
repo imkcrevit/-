@@ -7,11 +7,44 @@ namespace ConsoleApp
         //private static double money = 0.0d;
         static void Main(string[] args)
         {
-           TestPaperA tpa = new TestPaperA();
-           tpa.TestQuestion1();
-           TestPaperB tpb = new TestPaperB();
-           tpb.TestQuestion1();
-            Console.ReadLine();
+            //Facade
+           // Facade facade = new Facade();
+           // facade.MethodA();
+           //Builder
+           // ConcreteBuilder1 builder1 = new ConcreteBuilder1();//建造者1
+           // ConcreteBuilder2 builder2 = new ConcreteBuilder2();//建造者2
+           // Director dir= new Director();//初始化指挥
+           // dir.Construe(builder1);//传入建造者创建指定部件
+           // var product1 = builder1.GetResult();
+           // dir.Construe(builder2);
+           // var product2 = builder2.GetResult();
+           // product2.Show();
+           // product1.Show();
+           //Observer
+           // ConcreteSubject subject = new ConcreteSubject();
+           //  subject.Attach(new ConcreteObserver("X",subject));
+           //  subject.Attach(new ConcreteObserver("Y",subject));
+           //  ConcreteSubject subject2 = new ConcreteSubject();
+           //  subject2.Attach(new ConcreteObserver("Z",subject2));
+           //  subject.Update+=new SubjectHandler(new ConcreteObserver("X",subject).Update);
+           //  subject.Update+=new SubjectHandler(new ConcreteObserver("Y",subject).Update);
+           //  subject2.Update+=new SubjectHandler(new ConcreteObserver("Z",subject2).Update);
+           //
+           // subject.SubjectState = "is subject";
+           // subject.Notify();
+           //
+           // subject2.SubjectState = "is subject2";
+           // subject2.Notify();
+           //AbstractFactory
+           const string dbName = "mysql";
+           User u = new User();
+           u.Name = "noName";
+           u.Id = 1;
+           AbstractFactory factory = new AbstractFactory();
+           var user = factory.CreateUser(dbName);
+           user.Insert(u);
+           
+           Console.Read();
         }
 
         #region 策略模式 Strategy
