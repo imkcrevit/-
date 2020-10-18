@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ConsoleApp
 {
@@ -36,13 +37,57 @@ namespace ConsoleApp
            // subject2.SubjectState = "is subject2";
            // subject2.Notify();
            //AbstractFactory
-           const string dbName = "mysql";
-           User u = new User();
-           u.Name = "noName";
-           u.Id = 1;
-           AbstractFactory factory = new AbstractFactory();
-           var user = factory.CreateUser(dbName);
-           user.Insert(u);
+           // const string dbName = "mysql";
+           // User u = new User();
+           // u.Name = "noName";
+           // u.Id = 1;
+           // AbstractFactory factory = new AbstractFactory();
+           // var user = factory.CreateUser(dbName);
+           // user.Insert(u);
+           //State
+           // Content c = new Content(new ConcreteStateA());
+           // c.Request();
+           // c.Request();
+           // c.Request();
+           // c.Request();
+           //Adapter
+           // Target target = new Adapter();
+           // target.Request();
+           //Memento
+           //创建组织者，并赋值
+           // Originator originator = new Originator();
+           // originator.State = "On";
+           // originator.Show();
+           // //创建管理者，并存储备忘录
+           // Caretaker  caretaker = new Caretaker();
+           // caretaker.Memento = originator.CreateMemento();
+           //  //修改组织者的值
+           // originator.State = "Off";
+           // originator.Show();
+           // //还原为初始值
+           // originator.SetMemento(caretaker.Memento);
+           // originator.Show();
+           //Composite
+           // Composite site = new Composite("root");
+           // site.Add(new Leaf("Leaf A"));
+           // site.Add(new Leaf("Leaf B"));
+           //
+           // Composite comp = new Composite("Composite X");
+           // comp.Add(new Leaf("Leaf XA"));
+           // comp.Add(new Leaf("Leaf XB"));
+           // site.Add(comp);
+           //
+           // Composite comp2 = new Composite("Composite XY");
+           // comp2.Add(new Leaf("Leaf XYA"));
+           // comp2.Add(new Leaf("Leaf XYB"));
+           // comp.Add(comp2);
+           //
+           // site.Add(new Leaf("Leaf C"));
+           //
+           // Leaf leaf = new Leaf("Leaf D");
+           // site.Add(leaf);
+           //
+           // site.Display(1);
            
            Console.Read();
         }
