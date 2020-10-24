@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Reflection.Metadata.Ecma335;
 
 namespace ConsoleApp
@@ -88,7 +90,84 @@ namespace ConsoleApp
            // site.Add(leaf);
            //
            // site.Display(1);
+           //Bridge
+           // Abstraction abstraction = new RefinedAbstraction();
+           // abstraction.SetImplementor(new ConcreteImplementorA());
+           // abstraction.Operator();
+           // abstraction.SetImplementor(new ConcreteImplementorB());
+           // abstraction.Operator();
+           //Command
+           // Receiver re = new Receiver();
+           // Command c = new ConcreteCommand(re);
+           // Invoker i = new Invoker();
+           // i.SetCommand(c);
+           // i.ExecuteCommand();
+           //ChainOfResponsibility
+           // ConcreteHandler handle1 = new ConcreteHandler();
+           // ConcreteHandlerB handle2 = new ConcreteHandlerB();
+           // ConcreteHandlerC handle3 = new ConcreteHandlerC();
+           // handle1.SetChainOfResponsilbility(handle2);
+           // handle3.SetChainOfResponsilbility(handle3);
+           // int[] resquests = {2, 5, 14, 22, 18, 3, 27, 20};
+           // foreach (var i in resquests)
+           // {
+           //     handle1.HandlerRequest(i);
+           // }
+           //Mediator
+           // ConcreteMediator m = new ConcreteMediator();
+           // ConcreteColleague c1 = new ConcreteColleague(m);
+           // ConcreteColleague2 c2   = new ConcreteColleague2(m);
+           // m.Colleague1 = c1;
+           // m.Colleague2 = c2;
+           // c2.Send("吃过饭了，你那？");
+           // c1.Send("没有那，一起？");
+           //FlyWeight
+
+           // int i = 22;
+           // FlyWeightFactory f = new FlyWeightFactory();
+           //
+           // FlyWeight fx = f.GetFlyWeight("X");
+           // fx.Operation(--i);
+           //
+           // FlyWeight fy = f.GetFlyWeight("Y");
+           // fy.Operation(--i);
+           //
+           // FlyWeight fz = f.GetFlyWeight("Z");
+           // fz.Operation(--i);
+           //
+           // FlyWeight uf = new UnSharedConcreteFlyWeight();
+           // uf.Operation(--i);
            
+           //Interpreter
+           IContext context = new IContext();
+           List<AbstractExpression> list = new List<AbstractExpression>();
+           list.Add(new NonterminalExpression());
+           list.Add(new TerminalExpression());
+           list.Add(new TerminalExpression());
+           
+           foreach (var expression in list)
+           {
+               expression.Interpret(context);
+           }
+           
+           // Visitor
+           // ObjectStructure structure = new ObjectStructure();
+           // structure.Attach(new ConcreteElementA());
+           // structure.Attach(new ConcreteElementB());
+           //
+           // ConcreteVisitor v1 = new ConcreteVisitor();
+           // ConcreteVisitor2 v2 = new ConcreteVisitor2();
+           //
+           // structure.Accept(v1);
+           // structure.Accept(v2);
+           
+           //Singleton
+           Singleton s1 = Singleton.GetInstance();
+           Singleton s2 = Singleton.GetInstance();
+           if (s1 == s2)
+           {
+               Console.WriteLine("两个对象是相同的实例");
+           }
            Console.Read();
         }
 
